@@ -13,8 +13,10 @@ jobs:
               set-safe-directory: /github/workspace
 
       - name: Mark workspace as safe
-        run: git config --global --add safe.directory /github/workspace
-
+        run: |
+              git config --global --add safe.directory /github/workspace
+              git config --global --add safe.directory /home/runner/work/test-psalm/test-psalm
+    
       - name: Check the data
         run: echo $GITHUB_WORKSPACE
 
