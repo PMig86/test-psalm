@@ -16,12 +16,9 @@ jobs:
         run: |
               git config --global --add safe.directory /github/workspace
               git config --global --add safe.directory /home/runner/work/test-psalm/test-psalm
-              sh -c "git config --global --add safe.directory $PWD"
     
       - name: Check the data
         run: echo $GITHUB_WORKSPACE
 
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions:5.7.7
-        with:
-              ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
