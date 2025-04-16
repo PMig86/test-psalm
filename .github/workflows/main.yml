@@ -10,10 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
         with:
-              set-safe-directory: '*'
+              set-safe-directory: /github/workspace
 
       - name: Mark workspace as safe
-        run: git config --global --add safe.directory '*'
+        run: git config --global --add safe.directory /github/workspace
 
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions
