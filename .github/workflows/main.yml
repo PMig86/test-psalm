@@ -8,13 +8,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Mark the directory as safe for Git
-        run: |
-          git config --global --add safe.directory /github/workspace
-          git config --global --get-all safe.directory
-          echo "Safe directory configuration applied successfully."
+        uses: actions/checkout@v2
 
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions
+        with:
+              ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
