@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v2
 
       - name: Mark workspace as safe
-        run: git config --global --add safe.directory /github/workspace
+        run: git config --global --add safe.directory '*'
 
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions
