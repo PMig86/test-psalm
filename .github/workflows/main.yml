@@ -21,4 +21,4 @@ jobs:
         run: echo $GITHUB_WORKSPACE
 
       - name: Psalm
-        uses: docker://ghcr.io/psalm/psalm-github-actions:5.7.7
+        uses: docker://ghcr.io/psalm/psalm-github-actions:6.10.0
