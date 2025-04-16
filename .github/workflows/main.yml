@@ -15,6 +15,9 @@ jobs:
       - name: Mark workspace as safe
         run: git config --global --add safe.directory /github/workspace
 
+      - name: Check the data
+        run: ls $GITHUB_WORKSPACE
+
       - name: Psalm
         uses: docker://ghcr.io/psalm/psalm-github-actions
         with:
