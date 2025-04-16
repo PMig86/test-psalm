@@ -22,6 +22,6 @@ jobs:
         run: echo $GITHUB_WORKSPACE
 
       - name: Psalm
-        uses: docker://ghcr.io/psalm/psalm-github-actions
+        uses: docker://ghcr.io/psalm/psalm-github-actions:6.9.5
         with:
               ssh_key: ${{ secrets.SSH_PRIVATE_KEY }}
